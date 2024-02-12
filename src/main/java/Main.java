@@ -12,7 +12,9 @@ import java.util.Scanner;
 
 public class Main {
 
-    public void Main(){
+    String name;
+    public void SetName(String name){
+        this.name=name;
     }
     public static void main(String[] args) throws Exception {
         Scanner scanner=new Scanner(System.in);
@@ -24,16 +26,18 @@ public class Main {
 
 
         Main main=new Main();
+        main.SetName(name);
+
         while (true) {
             input=scanner.nextLine();
             if (input.equals("exit")) break;
             else if (input.equals("pull")) main.GETRequest();
+            else if (input.equals("subscribe")) main.subscibe();
             else main.sendPost(name,input.getBytes(),url);
         }
     }
 
     public void subscibe(){
-
     }
 
     public void GETRequest() throws IOException
